@@ -1,0 +1,266 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* ===============================
+    EIGEN STYLING
+================================= */
+header {
+    
+    padding: 3em 0 3em 0
+    
+}
+[src="images/logotransavia.svg"] {
+    float: left;
+    width: 5em;
+    margin-left: 1em;
+}
+
+li {
+    float: left;
+    margin-right: 2em;
+    margin-top: 2em;
+    margin-left: 1em;
+    
+}
+
+[href="account.html"] {
+    float: right;
+}
+
+h1 {
+    font-family: "Nexa Bold", Arial, sans-serif;
+    font-size: 1.78em;
+    margin-bottom: 0.8em;
+    margin-top: 0.8em;
+    margin-left: 2em;
+    margin-bottom: 0.3em;
+}
+
+h2 {
+    font-family: "Nexa Bold", Arial, sans-serif;
+    font-size: 0.94em;
+    margin-left: 2em;
+    margin-bottom: 1.5em;
+}
+
+h3 {
+    font-family: "Nexa Bold", Arial, sans-serif;
+    font-size: 1.5em;
+    margin-left: 6.8em;
+    margin-bottom: 1em;
+    margin-top: 2em;
+}
+
+p {
+    font-family: "Nexa Light", Arial, sans-serif;
+    font-size: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 1em;
+}
+
+a {
+    font-family: "Nexa Bold", Arial, sans-serif;
+    font-size: 1em;
+    border: solid #e22c5d 0.16em;
+    padding: 0.25em;
+    text-decoration: none;
+    color: white;
+    background: #e22c5d;
+    border-radius: 0.5em;
+}
+
+[href="kinderboek.html"] {
+    float: right;
+    margin-right: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+[href="vrijdagde13e.html"] {
+    float: right;
+    margin-right: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+[href="charliesheen.html"] {
+    float: right;
+    margin-right: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+[type="button"] {
+    font-family: "Nexa Bold", Arial, sans-serif;
+    font-size: 0.94em;
+    padding: 0.5em;
+    margin-top: 3em;
+    color: white;
+    background: #2c2f86;
+    border-radius: 0.5em;
+}
+
+section {
+    border: solid black 0.05em;
+    margin: 1em 10em;
+    padding-bottom: 3em;
+    border-radius: 0.5em;
+}
+
+article {
+    border: solid black 0.05em;
+    margin: 1em 10em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 0.5em;
+}
+
+[name="comments"] {
+    width: 20em;
+    height: 10em;
+    padding: 0.5em;
+    margin-left: 10.5em;
+    border: solid slategray 0.05em;
+    border-radius: 0.5em;
+    font-family: "Nexa Light", Arial, sans-serif;
+    font-size: 0.94em;
+}
+
+
