@@ -1,0 +1,371 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*=============================================
+    EIGEN STYLING:
+=============================================== */
+
+
+/*
+html {
+    background-image: url(images/chrl1-8.png);
+    width: 100%;
+}
+
+@media (max-width: 50em) {
+    html {
+        background-image: url(images/chrl2-8.png);
+        background-position: center;
+    }
+}
+
+@media (max-width: 35em) {
+    html {
+        background-image: url(images/chrl3-8.png);
+        background-position: center;
+    }
+}
+*/
+
+
+
+/* ========================
+    HEADER
+===========================*/
+
+header {
+    padding: 1em 0 1em 1em;
+    background: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    margin-bottom: 3em;
+}
+
+img[src="images/logotransavia.svg"] {
+    float: left;
+    width: 3em;
+    margin-right: 0.3em;
+}
+
+h1 {
+    font-family: "Nexa Bold", Arial, sans-serif;
+    font-size: 1.78em;
+    color: #00d66c;
+    margin-top: 0.45em;
+    float: left;
+}
+
+@media (max-width: 40em) {
+    h1 {
+        display: none;
+    }
+}
+
+a[href="mijnlijst.html"] {
+    background: #00d66c;
+    border: #00d66c solid 0.16em;
+    margin-right: 1.5em;
+    font-family: "Nexa Bold", Arial, sans-serif;
+    font-size: 0.9em;
+    padding: 0.25em;
+    text-decoration: none;
+    color: white;
+    border-radius: 0.5em;
+    float: right;
+    padding-top: 0.7em;
+}
+
+a[href="mijnlijst.html"]:hover {
+    background: rgba(0, 214, 108, 0.85);
+    border: rgba(0, 214, 108, 0.85) solid;
+}
+
+a[href="inloggen.html"] {
+    background: none;
+    border: none;
+    width: 3em;
+    float: left;
+    margin-right: 1em;
+}
+
+img[src="images/accounticon.png"] {
+    width: 2em;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#zoekbalk {
+    border-radius: 0.5em;
+    font-family: "Nexa Light", Arial, sans-serif;
+    padding: 0.3em;
+    font-size: 0.75em;
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+
+/* =====================
+    BODY
+======================== */
+
+
+img[src="images/chrl1-8.png"] {
+    width: 73em;
+}
+
+
+p {
+    font-family: "Marker Felt", Arial, sans-serif;
+    margin-top: 1em;
+    line-height: 2em;
+    font-size: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 1em;
+    color: #0377A7;
+}
+
+@media (max-width: 30em){
+    p {
+        width: 20em;
+    }
+}
+article {
+    width: 80em;
+    border-radius: 0.5em;
+    margin-top: 5em;
+    margin-right: auto;
+    /*background: rgba(255, 255, 255, 0.5);*/
+}
+
+@media (max-width: 40em) {
+    
+    article {
+        min-width: 20em;
+        max-width: 30em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+img[src="images/charliesheentitel.png"] {
+    width: 70%;
+    margin-left: 5%;
+}
+
+@media (max-width: 20em) {
+    img[src="images/charlie.png"] {
+        margin-left: 0;
+    }
+}
+
+h4 {
+    font-family: "Nexa Bold", Arial, sans-serif;
+    font-size: 1em;
+    margin-left: 32%;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+[name="comments"] {
+    width: 20em;
+    height: 10em;
+    padding: 0.5em;
+    margin-left: 30%;
+    border: solid slategray 0.05em;
+    border-radius: 0.5em;
+    font-family: "Nexa Light", Arial, sans-serif;
+    font-size: 0.94em;
+}
+
+@media (max-width: 60em) {
+    [name="comments"] {
+        width: 18em;
+    } 
+}
+
+@media (max-width: 40em) {
+    [name="comments"] {
+        width: 15em;
+    } 
+}
+
+input[type="submit"] {
+    border: solid 0.2em #e22c5d;
+    background: #e22c5d;
+    border-radius: 0.5em;
+    font-family: "Nexa Bold", Arial, sans-serif;
+    font-size: 1em;
+    color: white;
+    display: block;
+    margin: 1em 1em 1em 50%;
+}
+
+@media (max-width: 60em) {
+    input[type="submit"] {
+        margin: 1em 1em 1em 60%;
+    }
+}
+
+@media (max-width: 40em) {
+    input[type="submit"] {
+        margin: 1em 1em 1em 72%;
+    }
+}
+
+input[type="submit"]:active {
+    transform: scale(.9, .9);
+}
+
+input[type="submit"]:hover {
+    background: rgba(218, 48, 92, 0.85);
+    border: rgba(218, 48, 92, 0.85) solid;
+}
+
+input[type="submit"]:focus {
+    color: beige;
+    background: #00d66c;
+    border: #00d66c;
+}
+

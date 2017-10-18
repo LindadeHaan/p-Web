@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
     <meta charset="UTF-8">
@@ -11,36 +11,39 @@
 <body>
 
     <header>
-       <!-- bron: http://transavia.moniac.nl/img/logotransavia.svg -->
+        <!-- bron: http://transavia.moniac.nl/img/logotransavia.svg -->
         <a href="index.html"><img src="images/logotransavia.svg" alt="Logo Transavia"></a>
         <h1>Transavia Stories</h1>
         <nav>
-            <input id="zoekbalk" type="text" placeholder="Zoeken">
+            <input id="zoekbalk" type="search" placeholder="Zoeken">
             <a href="inloggen.html"><img src="images/accounticon.png" alt="Account"></a>
             <a href="mijnlijst.html">Mijn Lijst</a>
         </nav>
     </header>
-    
 
+
+    <main>
         <form>
-           <fieldset>
-            <legend>Registeren</legend>
+            <fieldset>
+                <legend>Registeren</legend>
 
-            <label>Voornaam: <input type="name"> </label>
+                <label>Voornaam: <input type="name" required> </label>
 
-            <label>Achternaam: <input type="surname"></label>
+                <label>Achternaam: <input type="surname" required></label>
 
-            <label>Gebruikersnaam: <input type="username"></label>
+                <label>Gebruikersnaam: <input type="username" required></label>
 
-            <label>Wachtwoord: <input type="password"></label>
+                <label>Wachtwoord: <input type="password" required></label>
 
-            <label>Herhaal wachtwoord: <input type="password"></label>
+                <label>Herhaal wachtwoord: <input type="password" required></label>
 
-            <label>E-mailadres: <input type="email"></label>
-            
-            <a href="index.html">Registreren</a>
+                <label>E-mailadres: <input type="mail" required></label>
+
+                <label><input type="submit"></label>
+                
             </fieldset>
         </form>
+    </main>
 
 </body>
 
