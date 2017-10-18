@@ -233,6 +233,7 @@ nav {
 }
 
 #zoekbalk {
+    width: 10em;
     border-radius: 0.5em;
     font-family: "Nexa Light", Arial, sans-serif;
     padding: 0.3em;
@@ -241,12 +242,38 @@ nav {
     margin-left: 1em;
 }
 
+@media (max-width: 30em) {
+    #zoekbalk {
+        opacity: 0;
+        transition: 0.5s ease-out;
+        width: 10em;
+    }
+    
+    #zoekbalk.visible {
+        width: 10em;
+        border-radius: 0.5em;
+        font-family: "Nexa Light", Arial, sans-serif;
+        padding: 0.3em;
+        font-size: 0.75em;
+        margin-right: 1em;
+        margin-left: 1em;
+        opacity: 1;
+        transition: 0.5s ease-out;
+    }
+}
+
+img[src="images/vergrootglas.png"] {
+    width: 2em;
+    height: 2em;
+    margin-right: 0.8em;
+}
+
 /*=================
     BODY
 ===================*/
 
 article {
-    width: 75em;
+    width: 100%;
     border-radius: 0.5em;
     margin-top: 8em;
     margin-left: auto;;
@@ -267,8 +294,7 @@ article {
 @media (max-width: 50em) {
     
     article {
-        min-width: 48em;
-        max-width: 49em;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -277,7 +303,7 @@ article {
 @media (max-width: 46em){
     article {
         min-width: 20em;
-        max-width: 28em;
+        max-width: 30em;
         margin-left: auto;
         margin-right: auto;
     }
@@ -294,6 +320,7 @@ h2 {
 article img {
     margin-left: auto;
     margin-right: auto;
+    display: inline-block;
 }
 
 h4 {

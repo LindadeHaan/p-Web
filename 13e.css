@@ -140,13 +140,13 @@ table {
     EIGEN STYLING:
 =============================================== */
 
+/*
 html {
     background-image: url(images/sad3.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
-
-
+*/
 
 /* ========================
     HEADER
@@ -219,12 +219,39 @@ nav {
 }
 
 #zoekbalk {
+    width: 10em;
     border-radius: 0.5em;
     font-family: "Nexa Light", Arial, sans-serif;
     padding: 0.3em;
     font-size: 0.75em;
     margin-right: 1em;
     margin-left: 1em;
+}
+
+@media (max-width: 30em) {
+    #zoekbalk {
+        opacity: 0;
+        transition: 0.5s ease-out;
+        width: 10em;
+    }
+    
+    #zoekbalk.visible {
+        width: 10em;
+        border-radius: 0.5em;
+        font-family: "Nexa Light", Arial, sans-serif;
+        padding: 0.3em;
+        font-size: 0.75em;
+        margin-right: 1em;
+        margin-left: 1em;
+        opacity: 1;
+        transition: 0.5s ease-out;
+    }
+}
+
+img[src="images/vergrootglas.png"] {
+    width: 2em;
+    height: 2em;
+    margin-right: 0.8em;
 }
 
 /*=================
@@ -255,9 +282,9 @@ p {
     }
 }
 article {
-    width: 35em;
+    width: 100%;
     border-radius: 0.5em;
-    margin-top: 8em;
+    margin-top: 5em;
     margin-left: auto;
     margin-right: auto;
     /*background: rgba(255, 255, 255, 0.5);*/
@@ -274,7 +301,7 @@ article {
 }
 
 
-img[src="images/vrijdag.png"] {
+img[src="images/dripping-8.png"] {
     width: 100%;
     margin-right: auto;
 }
