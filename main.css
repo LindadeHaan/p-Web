@@ -141,19 +141,28 @@ table {
     EIGEN STYLING
 ================================= */
 
+@font-face {
+    font-family: "Nexa Bold";
+    src: url("fonts/Nexa Bold.otf");
+}
+
+@font-face {
+    font-family: "Nexa Light";
+    src: url("fonts/Nexa Light.otf")
+}
+
 body {
     /*bron: https://pixabay.com/nl/blond-meisje-gras-buitenshuis-1866951/ */
     background-image: url(images/blond-1866951_1280.jpg);
     background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;   
+    background-position: top;
 }
 
 @media (max-width: 30em) {
     body {
         background-image: url(images/blond-1866951_640.jpg);
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: top;
     }
 }
 
@@ -177,6 +186,10 @@ img[src="images/logotransavia.svg"] {
     margin-right: 0.3em;
 }
 
+img[src="images/logotransavia.svg"]:hover {
+    transform: scale(1.1, 1.1);
+}
+
 h1 {
     font-family: "Nexa Bold", Arial, sans-serif;
     font-size: 1.78em;
@@ -185,7 +198,7 @@ h1 {
     float: left;
 }
 
-@media (max-width: 40em) {
+@media (max-width: 42em) {
     h1 {
         display: none;
     }
@@ -197,17 +210,65 @@ a[href="mijnlijst.html"] {
     margin-right: 1.5em;
     font-family: "Nexa Bold", Arial, sans-serif;
     font-size: 0.9em;
-    padding: 0.25em;
+    padding-right: 1.5em;
     text-decoration: none;
     color: white;
     border-radius: 0.5em;
     float: right;
-    padding-top: 0.7em;
+    padding-top: 0.4em;
+}
+
+@media (max-width: 30em) {
+    a[href="mijnlijst.html"] {
+        background: #00d66c;
+        border: #00d66c solid 0.16em;
+        margin-right: 1.5em;
+        font-family: "Nexa Bold", Arial, sans-serif;
+        font-size: 0.8em;
+        padding-right: 1.5em;
+        text-decoration: none;
+        color: white;
+        border-radius: 0.5em;
+        float: right;
+        padding-top: 0.5em;
+    }
 }
 
 a[href="mijnlijst.html"]:hover {
     background: rgba(0, 214, 108, 0.85);
-    border: rgba(0, 214, 108, 0.85) solid;
+    transform: scale(1.02, 1.02);
+}
+
+header nav a:last-of-type img {
+    width: 1em;
+    margin-right: 0.2rem;
+    opacity: 0;
+}
+
+@keyframes lijst {
+    0% {
+        transform: scale(0);
+    }
+    20% {
+        transform: scale(2);
+    }
+    40% {
+        transform: scale(1)
+    }
+    60% {
+        transform: scale(1.5)
+    }
+    80% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+header nav a:last-of-type img.visible {
+    opacity: 1;
+    animation: lijst 2s;
 }
 
 a[href="inloggen.html"] {
@@ -219,6 +280,10 @@ a[href="inloggen.html"] {
 
 img[src="images/accounticon.png"] {
     width: 2em;
+}
+
+header img[src="images/accounticon.png"]:hover {
+    transform: scale(1.1, 1.1);
 }
 
 nav {
@@ -241,11 +306,10 @@ nav {
     #zoekbalk {
         opacity: 0;
         transition: 0.5s ease-out;
-        width: 10em;
+        width: 7.5em;
     }
-    
     #zoekbalk.visible {
-        width: 10em;
+        width: 7.5em;
         border-radius: 0.5em;
         font-family: "Nexa Light", Arial, sans-serif;
         padding: 0.3em;
@@ -254,6 +318,9 @@ nav {
         margin-left: 1em;
         opacity: 1;
         transition: 0.5s ease-out;
+    }
+    img[src="images/vergrootglas.png"]:hover {
+        transform: scale(1.1, 1.1);
     }
 }
 
@@ -279,13 +346,7 @@ label {
     margin-bottom: 5em;
 }
 
-
-aside {
-    
-    
-}
-
-aside label {
+aside form label {
     display: grid;
     grid-template-columns: 4em auto 4em;
     grid-column-start: 1;
@@ -298,6 +359,30 @@ aside label {
     margin-top: 0.5em;
     margin-left: 2em;
     margin-right: 1em;
+}
+
+@keyframes wiggle {
+    10%,
+    90% {
+        transform: rotate(10deg);
+    }
+    20%,
+    80% {
+        transform: rotate(-10deg);
+    }
+    30%,
+    50%,
+    70% {
+        transform: rotate(10deg);
+    }
+    40%,
+    60% {
+        transform: rotate(-10deg);
+    }
+}
+
+aside form label.shake {
+    animation: wiggle 1s;
 }
 
 aside label:hover {
@@ -317,7 +402,7 @@ h3 {
     font-family: "Nexa Bold", Arial, sans-serif;
     font-size: 1em;
     margin-left: 24%;
-    color: white;
+    color: #e22c5d;
 }
 
 aside form {
@@ -332,7 +417,7 @@ aside form {
     margin-right: 20%;
 }
 
-@media(max-width: 50em){
+@media(max-width: 50em) {
     aside form {
         margin-left: 10%;
         margin-right: 10%;
@@ -342,12 +427,39 @@ aside form {
     }
 }
 
-@media(max-width: 45em){
+@media(max-width: 45em) {
     aside form {
         margin-left: 0;
         margin-right: 0;
     }
 }
+
+aside>button {
+    background: #e22c5d;
+    border: solid #e22c5d 0.15em;
+    border-radius: 0.5em;
+    font-family: "Nexa Bold", Arial, sans-serif;
+    font-size: 1.5em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 0.25em;
+    max-width: 30em;
+    min-width: 20em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+}
+
+@media (max-width: 40em) {
+    aside>button {
+        min-width: 20rem;
+        max-width: 30rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 
 /* =====================
     SORTEREN
@@ -409,6 +521,7 @@ h4 {
 p {
     font-family: "Nexa Light", Arial, sans-serif;
     font-size: 1em;
+    display: block;
     margin-left: 2em;
     margin-right: 2em;
     margin-bottom: 1em;
@@ -419,37 +532,53 @@ li {
     display: inline;
 }
 
-main  article > img:first-of-type {
-    width: 3.5em;
-    float: right;
-    margin-right: 0.5em;
+main article>img:first-of-type {
+    width: 3em;
 }
 
-main article > img:first-of-type.dancing {
-    width: 3.5em;
-    float: right;
+main article>img:first-of-type.dancing {
+    width: 3em;
     margin-right: 0.5em;
+    position: absolute;
     transform: rotate(360deg);
-    transition: transform 2s, opacity 0s ease-out 2s;
+    transition: transform 1.5s, opacity 0s ease-out 2s;
     opacity: 0;
 }
 
-main article > img:nth-of-type(2) {
-    width: 3.5em;
-    float: right;
+main article>img:nth-of-type(2) {
+    width: 3em;
     margin-right: 0.5em;
-    display: none;
+    position: absolute;
+    opacity: 0;
 }
 
-article:nth-of-type(1){
+main article>img:nth-of-type(2).display {
+    opacity: 1;
+    transition: opacity 0s ease-out 2s;
+}
+
+main article>img:nth-of-type(2).move {
+    width: 3em;
+    margin-right: 0.5em;
+    position: absolute;
+    transform: rotate(360deg);
+    transition: transform 1.5s, opacity 0s ease-out 2s;
+    opacity: 0;
+}
+
+main article>img:first-of-type.see {
+    opacity: 1;
+    transition: opacity 0s ease-out 2s;
+}
+
+article:nth-of-type(1) {
     background-image: url(images/ver.tablet-8.png);
     color: white;
-    
 }
 
 img[src="images/boers.png"] {
     width: 10em;
-    margin-left: 10%;
+    margin-left: 3em;
 }
 
 a[href="boers.html"] {
@@ -479,13 +608,15 @@ a[href="boers.html"]:focus {
 }
 
 article:nth-of-type(2) {
-    background-image: url(images/sad5.png);
-    background-position: top;
+    background-image: url(images/backgrounddrip-8.png);
+    background-position: right;
 }
 
-img[src="images/vrijdag.png"]{
-    width: 15em;
-    margin-left: 10%;
+img[src="images/vrijdag.png"] {
+    width: 13em;
+    margin-left: 3rem;
+    margin-bottom: 1em;
+    margin-top: 0.5em;
 }
 
 a[href="vrijdagde13e.html"] {
@@ -515,13 +646,14 @@ a[href="vrijdagde13e.html"]:focus {
 }
 
 article:nth-of-type(3) {
-    background-image: url(images/arrogant1.png);
-    background-position: center;
+    background-image: url(images/backgroundchrl-8.png);
+    background-position: top;
+    background-repeat: no-repeat;
 }
 
 img[src="images/charliesheentitel.png"] {
-    width: 15em;
-    margin-left: 10%;
+    width: 14em;
+    margin-left: 3em;
 }
 
 a[href="charliesheen.html"] {
@@ -587,15 +719,29 @@ article {
     min-width: 20em;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+}
+
+body main article.turn {
+    transform: rotate(720deg);
+    transition: transform 2s;
 }
 
 @media (max-width: 40em) {
-    
     article {
         min-width: 20em;
         max-width: 30em;
-        margin-left: 2em;
-        margin-right: 2em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 30em) {
+    article {
+        min-width: 20em;
+        max-width: 30em;
+        margin-left: 2rem;
+        margin-right: 2rem;
     }
 }
 
@@ -609,8 +755,7 @@ img[src="Vormgeving/Medelijden/idee3latop1-100.jpg"] {
 footer {
     font-family: "Nexa Bold", Arial, sans-serif;
     font-size: 0.8em;
-    margin-left: 4em;
-    margin-bottom: 0.5em;
+    margin-left: 2em;
 }
 
 [name="comments"] {
@@ -651,7 +796,6 @@ form fieldset legend {
 }
 
 main form {
-    border: black solid 0.1em;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5em;
@@ -659,7 +803,7 @@ main form {
     border-radius: 0.5em;
     padding: 1em;
     background: rgba(255, 255, 255, 0.9);
-    width: 30em;   
+    width: 30em;
 }
 
 @media (max-width: 40em) {
@@ -669,6 +813,7 @@ main form {
         width: 70%;
     }
 }
+
 input:invalid {
     background: rgba(255, 0, 0, 0.1);
 }
@@ -680,7 +825,6 @@ input:focus {
 input:hover {
     transform: scale(1.05, 1.05);
 }
-
 
 form fieldset {
     display: flex;
@@ -697,8 +841,7 @@ form fieldset label {
 }
 
 main form fieldset input {
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     border-radius: 0.5em;
     padding: 0.25em;
     display: flex;
@@ -711,9 +854,7 @@ main form fieldset input:hover {
     transform: scale(1.05, 1.05);
 }
 
-
-
-button {
+main form fieldset label button {
     font-family: "Nexa Bold", Arial, sans-serif;
     font-size: 1.5em;
     border: #e22c5d solid;
@@ -722,8 +863,7 @@ button {
     background: #e22c5d;
     text-decoration: none;
     color: white;
-    margin-left: auto;
-    margin-right: auto;
+    align-items: center;
     text-align: center;
 }
 
@@ -737,12 +877,13 @@ form fieldset a {
 
 button:active {
     transform: scale(.9, .9);
+    color: white;
 }
 
 button:hover {
     background: rgba(218, 48, 92, 0.85);
     border: rgba(218, 48, 92, 0.85) solid;
-    color: #00d66c;
+    color: white;
 }
 
 button:focus {
@@ -753,7 +894,7 @@ button:focus {
 input[type="submit"] {
     margin-left: auto;
     margin-right: auto;
-    font-size: 1.5em;   
+    font-size: 1.5em;
 }
 
 input[type="submit"]:active {
@@ -770,6 +911,8 @@ input[type="submit"]:focus {
     background: #00d66c;
     border: #00d66c;
 }
+
+
 /* ================
     INLOGGEN
 =================== */
@@ -787,4 +930,8 @@ a[href="registreren.html"] {
     text-decoration: underline;
     text-align: center;
     font-size: 1em;
+}
+
+a[href="registreren.html"]:hover {
+    transform: scale(1.1, 1.1);
 }

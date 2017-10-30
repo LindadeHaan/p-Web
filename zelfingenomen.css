@@ -136,9 +136,20 @@ table {
     border-spacing: 0;
 }
 
+
 /*=============================================
     EIGEN STYLING:
 =============================================== */
+
+@font-face {
+    font-family: "Nexa Bold";
+    src: url("fonts/Nexa Bold.otf");
+}
+
+@font-face {
+    font-family: "Nexa Light";
+    src: url("fonts/Nexa Light.otf")
+}
 
 
 /*
@@ -162,6 +173,7 @@ html {
 }
 */
 
+
 /* ========================
     HEADER
 ===========================*/
@@ -181,6 +193,10 @@ img[src="images/logotransavia.svg"] {
     margin-right: 0.3em;
 }
 
+img[src="images/logotransavia.svg"]:hover {
+    transform: scale(1.1, 1.1);
+}
+
 h1 {
     font-family: "Nexa Bold", Arial, sans-serif;
     font-size: 1.78em;
@@ -189,7 +205,7 @@ h1 {
     float: left;
 }
 
-@media (max-width: 40em) {
+@media (max-width: 42em) {
     h1 {
         display: none;
     }
@@ -201,17 +217,57 @@ a[href="mijnlijst.html"] {
     margin-right: 1.5em;
     font-family: "Nexa Bold", Arial, sans-serif;
     font-size: 0.9em;
-    padding: 0.25em;
+    padding-right: 1.5em;
     text-decoration: none;
     color: white;
     border-radius: 0.5em;
     float: right;
-    padding-top: 0.7em;
+    padding-top: 0.4em;
+}
+
+@media (max-width: 30em) {
+    a[href="mijnlijst.html"] {
+        background: #00d66c;
+        border: #00d66c solid 0.16em;
+        margin-right: 1.5em;
+        font-family: "Nexa Bold", Arial, sans-serif;
+        font-size: 0.8em;
+        padding-right: 1.5em;
+        text-decoration: none;
+        color: white;
+        border-radius: 0.5em;
+        float: right;
+        padding-top: 0.5em;
+    }
 }
 
 a[href="mijnlijst.html"]:hover {
     background: rgba(0, 214, 108, 0.85);
-    border: rgba(0, 214, 108, 0.85) solid;
+    transform: scale(1.02, 1.02);
+}
+
+header nav a:last-of-type img {
+    width: 1em;
+    margin-right: 0.2rem;
+    opacity: 0;
+}
+
+@keyframes notification: {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+header nav a:last-of-type img.visible {
+    opacity: 1;
+    animation: notification;
+    transition: animation 1.5s;
 }
 
 a[href="inloggen.html"] {
@@ -219,11 +275,14 @@ a[href="inloggen.html"] {
     border: none;
     width: 3em;
     float: left;
-    margin-right: 1em;
 }
 
 img[src="images/accounticon.png"] {
     width: 2em;
+}
+
+header img[src="images/accounticon.png"]:hover {
+    transform: scale(1.1, 1.1);
 }
 
 nav {
@@ -248,7 +307,6 @@ nav {
         transition: 0.5s ease-out;
         width: 10em;
     }
-    
     #zoekbalk.visible {
         width: 10em;
         border-radius: 0.5em;
@@ -260,6 +318,9 @@ nav {
         opacity: 1;
         transition: 0.5s ease-out;
     }
+    img[src="images/vergrootglas.png"]:hover {
+        transform: scale(1.1, 1.1);
+    }
 }
 
 img[src="images/vergrootglas.png"] {
@@ -268,15 +329,14 @@ img[src="images/vergrootglas.png"] {
     margin-right: 0.8em;
 }
 
+
 /* =====================
     BODY
 ======================== */
 
-
 img[src="images/chrl1-8.png"] {
     width: 100%;
 }
-
 
 p {
     font-family: "Marker Felt", Arial, sans-serif;
@@ -289,11 +349,12 @@ p {
     color: #0377A7;
 }
 
-@media (max-width: 30em){
+@media (max-width: 30em) {
     p {
         width: 20em;
     }
 }
+
 article {
     width: 100%;
     border-radius: 0.5em;
@@ -302,34 +363,29 @@ article {
     /*background: rgba(255, 255, 255, 0.5);*/
 }
 
-@media (max-width: 31em) {
-    
+@media (max-width: 25em) {
     article {
-        min-width: 20em;
-        max-width: 30em;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    img[src="images/chrl1-8.png"] {
         width: 100%;
+        background-image: url(images/chrl3-8.png);
+        background-repeat: no-repeat;
+        height: 165rem;
+    }
+    img[src="images/chrl1-8.png"] {
+        display: none;
     }
 }
 
 @media (max-width: 41em) {
-    
     article {
         min-width: 30em;
         max-width: 40em;
         margin-left: auto;
         margin-right: auto;
     }
-    
     img[src="images/chrl1-8.png"] {
         width: 100%;
     }
 }
-
 
 img[src="images/charliesheentitel.png"] {
     width: 70%;
@@ -364,13 +420,13 @@ h4 {
 @media (max-width: 60em) {
     [name="comments"] {
         width: 18em;
-    } 
+    }
 }
 
 @media (max-width: 40em) {
     [name="comments"] {
         width: 15em;
-    } 
+    }
 }
 
 input[type="submit"] {
@@ -410,4 +466,3 @@ input[type="submit"]:focus {
     background: #00d66c;
     border: #00d66c;
 }
-
