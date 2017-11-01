@@ -139,8 +139,11 @@ table {
 
 /*=============================================
     EIGEN STYLING:
+
+Ik heb voor elk verhaal een apart CSS bestand gemaakt, zo is het makkelijk om te stijlen en het is ook makkelijker voor anderen om het te snappen. Op deze manier hoef ik namelijk geen classes of andere moeilijke manieren gebruiken om alles te stijlen.
 =============================================== */
 
+/* @font-face gebruiken, zodat het font Nexa niet op een computer hoeft te staan om weer te kunnen geven. */
 @font-face {
     font-family: "Nexa Bold";
     src: url("fonts/Nexa Bold.otf");
@@ -156,30 +159,11 @@ table {
     src: url("fonts/stiletto.ttf")
 }
 
-html {
-    background-image: url(images/verwarrend1.png);
-    background-attachment: fixed;
-    background-position: center;
-    width: 100%;
-}
-
-@media (max-width: 50em) {
-    html {
-        background-image: url(images/ver.tablet-8.png);
-        background-position: center;
-    }
-}
-
-@media (max-width: 30em) {
-    html {
-        background-image: url(images/ver.mobiel-8.png);
-        background-position: center;
-    }
-}
-
 
 /* ========================
     HEADER
+
+In de header staan iconen waarmee de gebruiker kan navigeren: de zoekbalk, inloggen en mijn lijst. Het logo is de knop terug naar de overzichtspagina.
 ===========================*/
 
 header {
@@ -229,6 +213,7 @@ a[href="mijnlijst.html"] {
     padding-top: 0.4em;
 }
 
+/* mobiele versie 'Mijn Lijst'-knop */
 @media (max-width: 30em) {
     a[href="mijnlijst.html"] {
         background: #00d66c;
@@ -254,24 +239,6 @@ header nav a:last-of-type img {
     width: 1em;
     margin-right: 0.2rem;
     opacity: 0;
-}
-
-@keyframes notification: {
-    0% {
-        transform: scale(0);
-    }
-    50% {
-        transform: scale(2);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-header nav a:last-of-type img.visible {
-    opacity: 1;
-    animation: notification;
-    transition: animation 1.5s;
 }
 
 a[href="inloggen.html"] {
@@ -305,14 +272,17 @@ nav {
     margin-left: 1em;
 }
 
+/* mobiele versie zoekbalk. De default is hier dat de zoekbalk niet zichtbaar is.*/
 @media (max-width: 30em) {
     #zoekbalk {
         opacity: 0;
         transition: 0.5s ease-out;
-        width: 10em;
+        width: 7.5em;
     }
+    
+    /* class om javascript code aan te roepen om de zoekbalk laten verschijnen als iemand op het vergrootglas klikt. */
     #zoekbalk.visible {
-        width: 10em;
+        width: 7.5em;
         border-radius: 0.5em;
         font-family: "Nexa Light", Arial, sans-serif;
         padding: 0.3em;
@@ -334,9 +304,39 @@ img[src="images/vergrootglas.png"] {
 }
 
 
+img[src="images/vergrootglas.png"] {
+    width: 2em;
+    height: 2em;
+    margin-right: 0.8em;
+}
+
+
 /*=================
     BODY
+
+In de body van alle verhalen staat alleen een afbeelding en een comment-veld met een knop, omdat de verhalen vormgegeven zijn en in het bestand zijn gezet doormiddel van een afbeelding.
 ===================*/
+
+html {
+    background-image: url(images/verwarrend1.png);
+    background-attachment: fixed;
+    background-position: center;
+    width: 100%;
+}
+
+@media (max-width: 50em) {
+    html {
+        background-image: url(images/ver.tablet-8.png);
+        background-position: center;
+    }
+}
+
+@media (max-width: 30em) {
+    html {
+        background-image: url(images/ver.mobiel-8.png);
+        background-position: center;
+    }
+}
 
 article {
     width: 100%;
@@ -345,7 +345,6 @@ article {
     margin-left: auto;
     ;
     margin-right: auto;
-    /*background: rgba(255, 255, 255, 0.5);*/
 }
 
 @media (max-width: 70em) {
@@ -357,6 +356,7 @@ article {
     }
 }
 
+/* tablet versie breedte van het article waar de afbeeldingen in staan */
 @media (max-width: 50em) {
     article {
         width: 100%;
@@ -406,6 +406,7 @@ h4 {
     font-size: 0.94em;
 }
 
+/* tablet versie comment-veld*/
 @media (max-width: 60em) {
     [name="comments"] {
         width: 18em;
@@ -429,6 +430,7 @@ input[type="submit"] {
     margin: 1em 1em 1em 50%;
 }
 
+/* tablet versie submit-knop */
 @media (max-width: 60em) {
     input[type="submit"] {
         margin: 1em 1em 1em 60%;

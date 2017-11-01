@@ -141,6 +141,8 @@ table {
     EIGEN STYLING
 ================================= */
 
+
+/* @font-face gebruiken, zodat het font Nexa niet op een computer hoeft te staan om weer te kunnen geven. */
 @font-face {
     font-family: "Nexa Bold";
     src: url("fonts/Nexa Bold.otf");
@@ -169,6 +171,8 @@ body {
 
 /* ========================
     HEADER
+
+In de header staan iconen waarmee de gebruiker kan navigeren: de zoekbalk, inloggen en mijn lijst. Het logo is de knop terug naar de overzichtspagina.
 ===========================*/
 
 header {
@@ -218,6 +222,8 @@ a[href="mijnlijst.html"] {
     padding-top: 0.4em;
 }
 
+
+/* mobiele versie*/
 @media (max-width: 30em) {
     a[href="mijnlijst.html"] {
         background: #00d66c;
@@ -245,6 +251,8 @@ header nav a:last-of-type img {
     opacity: 0;
 }
 
+
+/* animatie om een rondje te laten bouncen/bonken als er een verhaal wordt toegevoegd aan 'Mijn Lijst'. */
 @keyframes lijst {
     0% {
         transform: scale(0);
@@ -302,12 +310,15 @@ nav {
     margin-left: 1em;
 }
 
+/* mobiele versie zoekbalk. De default is hier dat de zoekbalk niet zichtbaar is. */
 @media (max-width: 30em) {
     #zoekbalk {
         opacity: 0;
         transition: 0.5s ease-out;
         width: 7.5em;
     }
+    
+    /* class om javascript code aan te roepen om de zoekbalk laten verschijnen als iemand op het vergrootglas klikt. */
     #zoekbalk.visible {
         width: 7.5em;
         border-radius: 0.5em;
@@ -361,6 +372,8 @@ aside form label {
     margin-right: 1em;
 }
 
+
+/* animatie om de labels van de filters te laten schudden als feedback als er op wordt geklikt. */
 @keyframes wiggle {
     10%,
     90% {
@@ -381,6 +394,7 @@ aside form label {
     }
 }
 
+/* class om javascript code aan te roepen, zodat de filter gaat schudden */
 aside form label.shake {
     animation: wiggle 1s;
 }
@@ -400,12 +414,12 @@ aside label input {
 
 h3 {
     font-family: "Nexa Bold", Arial, sans-serif;
-    font-size: 1em;
+    font-size: 1.4em;
     margin-left: 24%;
-    color: #e22c5d;
+    color: #000;
 }
 
-aside form {
+aside>form {
     background: none;
     border: none;
     display: flex;
@@ -418,7 +432,7 @@ aside form {
 }
 
 @media(max-width: 50em) {
-    aside form {
+    aside>form {
         margin-left: 10%;
         margin-right: 10%;
     }
@@ -428,7 +442,7 @@ aside form {
 }
 
 @media(max-width: 45em) {
-    aside form {
+    aside>form {
         margin-left: 0;
         margin-right: 0;
     }
@@ -460,41 +474,11 @@ aside>button {
     }
 }
 
-
-/* =====================
-    SORTEREN
-========================
-
-#sorteren {
-    font-family: "Nexa Bold", Arial, sans-serif;
-    background: #00d66c;
-    width: 7em;
-    height: 2em;
-    font-size: 1em;
-    color: white;
-    display: grid;
-    grid-template-columns: 4em auto 4em;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-template-rows: auto;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    margin-bottom: 1em;
-    width: 8em;
-    margin-top: 0.5em;
-    margin-left: 12em;
-    margin-right: 1em;
-    border: #00d66c;
-}
-
-#sorteren:hover {
-    background: rgba(34, 212, 112, 0.8);
-    color: color: #e22c5d;
-} */
-
-
 /* ======================
     HOME
+
+Dit is de overzichtpagina waar alle verhalen staan. Alle verhalen hebben een eigen sfeer en die wordt weergegeven doormiddel van een design.
+Op de overzichtspagina kunnen gebruikers filteren op hun voorkeur, zich laten verrassen door op de 'Verras mij'-knop te klikken. En de gebruikers kunnen gemakkelijk een verhaal toevoegen aan persoonlijke lijst om deze bijvoorbeeld later te lezen of tijdens een reis.
 ========================= */
 
 body {
@@ -536,6 +520,7 @@ main article>img:first-of-type {
     width: 3em;
 }
 
+/* class om javascript code aan te roepen om de toevoeg-knop te laten draaien als er op wordt geklikt. */
 main article>img:first-of-type.dancing {
     width: 3em;
     margin-right: 0.5em;
@@ -552,20 +537,23 @@ main article>img:nth-of-type(2) {
     opacity: 0;
 }
 
+/* class om javascript code aan te roepen om de verwijder-knop te laten verschijnen als een verhaal is toegevoegd aan 'Mijn Lijst'. */
 main article>img:nth-of-type(2).display {
     opacity: 1;
     transition: opacity 0s ease-out 2s;
 }
 
+/* class om javascript code aan te roepen om de verwijder-knop te laten draaien als er op wordt geklikt. */
 main article>img:nth-of-type(2).move {
     width: 3em;
     margin-right: 0.5em;
     position: absolute;
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
     transition: transform 1.5s, opacity 0s ease-out 2s;
     opacity: 0;
 }
 
+/* class om javascript code aan te roepen om de toevoeg-knop te laten verschijnen als een verhaal verwijderd is uit 'Mijn Lijst'. */
 main article>img:first-of-type.see {
     opacity: 1;
     transition: opacity 0s ease-out 2s;
@@ -706,6 +694,8 @@ a[href="charliesheen.html"]:focus {
 
 /* ====================
     VERHALEN
+
+Door de CSS hieronder hebben alles articles dezelfde styling, als zij geen aparte styling hebben.
 ======================= */
 
 article {
@@ -722,11 +712,14 @@ article {
     position: relative;
 }
 
+/* class om javascript code aan te roepen om de articles op de overzichtpagina te laten daaien als er op de knop 'Verras mij' wordt geklikt. */
 body main article.turn {
     transform: rotate(720deg);
     transition: transform 2s;
 }
 
+
+/* tablet versie*/
 @media (max-width: 40em) {
     article {
         min-width: 20em;
@@ -736,6 +729,7 @@ body main article.turn {
     }
 }
 
+/* mobiele versie*/
 @media (max-width: 30em) {
     article {
         min-width: 20em;
@@ -769,20 +763,11 @@ footer {
     font-size: 0.94em;
 }
 
-input[type="submit"] {
-    border: solid 0.2em #e22c5d;
-    background: #e22c5d;
-    border-radius: 0.5em;
-    font-family: "Nexa Bold", Arial, sans-serif;
-    font-size: 1em;
-    color: white;
-    display: block;
-    margin: 1em 1em 1em 22em;
-}
-
 
 /* ===================
     REGISTREREN
+
+pagina waar nieuwe gebruikers van de website zich aan kunnen melden om verhalen in een persoonlijk lijst op te kunnen slaan en deze dus ook offline kunnen gaan lezen.
 ====================== */
 
 form fieldset legend {
@@ -915,6 +900,8 @@ input[type="submit"]:focus {
 
 /* ================
     INLOGGEN
+
+Hier kunnen gebruikers inloggen als zij bijvoorbeeld op een nieuw device op de site komen. Zo kunnen zij gewoon naar 'Mijn Lijst' en staan alle verhalen die zij op een ander device hebben opgeslagen nog in deze lijst.
 =================== */
 
 form fieldset img[src="images/accounticon.png"] {
